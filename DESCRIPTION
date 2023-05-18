@@ -10,15 +10,20 @@ Config/testthat/edition: 3
 Description: Herramientas para correr captura y recaptura.
 Encoding: UTF-8
 Imports:
-    R6,
-    tidyverse
-LazyData: true
-License: AGPL-3.0-or-later
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+    dplyr,
+    glue,
+    IPMbook,
+    lubridate,
+    multimark,
+    readr,
+    stringr,
 Suggests:
     devtools,
     roxygen2,
     testthat
+LazyData: true
+License: AGPL-3.0-or-later
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
 Type: Package
 Version: 0.1.0
