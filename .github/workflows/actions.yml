@@ -9,20 +9,20 @@ jobs:
     - name: Copia repositorio
       uses: actions/checkout@v2
     - name: Construye imagen
-      run: docker build --tag islasgeci .
+      run: docker build --tag islasgeci/chicks_petrel:latest --tag islasgeci/read_mapsource:${github_sha:0:4} .
     - name: Verifica el formato
-      run: docker run islasgeci make check
+      run: docker run islasgeci/chicks_petrel:latest make check
     - name: Corre pruebas y evalúa cobertura
-      run: docker run islasgeci make coverage
+      run: docker run islasgeci/chicks_petrel:latest make coverage
     - name: Docker log-in
       env:
         docker_username: ${{ secrets.docker_username }}
         docker_password: ${{ secrets.docker_password }}
       run: echo "${docker_password}" | docker login --username "${docker_username}" --password-stdin
     - name: Upload image to Docker Hub
-      run: docker push islasgeci/read_mapsource:latest
+      run: docker push islasgeci/chicks_petrel:latest
     - name: Tag image with hash
-      run: docker push islasgeci/read_mapsource:${github_sha:0:4}
+      run: docker push islasgeci/chicks_petrel:${github_sha:0:4}
     - name: Create/Update tag
       uses: rickstaa/action-create-tag@v1.5.4
       with:
