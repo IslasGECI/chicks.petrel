@@ -7,7 +7,7 @@ Authors@R: c(
            email = "ciencia.datos@islas.org.mx"
            ))
 Config/testthat/edition: 3
-Description: Plantilla de Ciencia de Datos en GECI para proyectos en R
+Description: Herramientas para correr captura y recaptura.
 Encoding: UTF-8
 Imports:
     R6,
